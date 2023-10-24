@@ -1,0 +1,22 @@
+.country {
+  border: 1px solid yellow;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-img {
+  max-width: 200px;
+  height: 120px;
+}
+
+.name {
+  padding: 0.5rem 1rem;
+  background-color: chocolate;
+  border-radius: 5px;
+}
