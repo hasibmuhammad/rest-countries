@@ -3,3 +3,18 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-country {
+  width: 20%;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+}

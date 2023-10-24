@@ -1,6 +1,5 @@
 import "./Country.css";
 const Country = ({ country }) => {
-  console.log(country);
   const {
     name: { common },
     cca2,
