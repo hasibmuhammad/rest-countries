@@ -6,13 +6,25 @@ const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
 
+  const api = search
+    ? "https://restcountries.com/v3.1/name"
+    : "https://restcountries.com/v3.1/all";
+
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/all`)
+    fetch(`${api}`)
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
 
-  const handleSearch = (e) => setSearch(e.target.value);
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    fetch(`${api}/${search}`)
+      .then((res) => res.json())
+      .then((data) => setCountries(data));
+  }, [search]);
 
   return (
     <div>
