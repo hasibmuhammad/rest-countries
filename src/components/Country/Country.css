@@ -1,5 +1,5 @@
 .country {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   padding: 2rem;
   border-radius: 15px;
   margin-bottom: 15px;
@@ -19,4 +19,8 @@
   padding: 0.5rem 1rem;
   background-color: chocolate;
   border-radius: 5px;
+}
+
+.visited {
+  background-color: green;
 }
