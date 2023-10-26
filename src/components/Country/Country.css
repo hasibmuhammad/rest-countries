@@ -20,7 +20,6 @@
   background-color: chocolate;
   border-radius: 5px;
 }
-
-.visited {
-  background-color: green;
+.favorite {
+  color: red;
 }

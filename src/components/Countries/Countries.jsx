@@ -6,6 +6,7 @@ const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
   const [visitedCountries, setVisitedCountries] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const api = search
     ? "https://restcountries.com/v3.1/name"
@@ -31,6 +32,10 @@ const Countries = () => {
     setVisitedCountries([...visitedCountries, country]);
   };
 
+  const handleFavorites = (fav) => {
+    setFavorites([...favorites, fav]);
+  };
+
   return (
     <div>
       <div>
@@ -43,14 +48,23 @@ const Countries = () => {
             onChange={handleSearch}
           />
         </div>
-        <p>
+        <div>
           <small>Visited Countries: {visitedCountries.length}</small>
           <ul>
             {visitedCountries.map((vc) => (
               <li>{vc}</li>
             ))}
           </ul>
-        </p>
+        </div>
+
+        <div>
+          <small>Favorite Countries: {favorites.length}</small>
+          <ul>
+            {favorites.map((fav) => (
+              <li key={fav}>{fav}</li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className="countries">
         {countries.map((country) => (
@@ -58,6 +72,7 @@ const Countries = () => {
             key={country.cca2}
             country={country}
             handleVisitedCountries={handleVisitedCountries}
+            handleFavorites={handleFavorites}
           />
         ))}
       </div>
